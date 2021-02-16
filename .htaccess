@@ -1,0 +1,17 @@
+RewriteEngine On 
+RewriteRule ^index index.php
+RewriteRule ^blog blog.php
+RewriteRule ^source source.php
+RewriteRule ^formation$ formation.php
+RewriteRule ^bout about.php
+RewriteRule ^inscription$ inscription.php
+RewriteRule ^login$ login.php
+RewriteRule ^rejoindre$ rejoindre.php
+RewriteRule ^page-([0-9]+) blog.php?id=$1 
+RewriteRule ^(p[age]+) blog.php
+RewriteRule ^reply-([0-9]+) reply.php?id=$1
+RewriteRule ^page-(.*)-([0-9]+) error.php
+RewriteRule (.*)-([0-9]+) lire.php?id=$2 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*)-(.*) error.php
